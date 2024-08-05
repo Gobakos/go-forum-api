@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+<body>
+    <h1>API Documentation</h1>
+    <div class="route">
+        <span class="method">GET</span>
+        <span class="endpoint">/</span>
+        <p class="description">Entry point for the application</p>
+    </div>
+    <div class="route">
+        <span class="method">GET</span>
+        <span class="endpoint">/v1/api/users/</span>
+        <p class="description">Fetches a list of users (Need authorization header with JWT)</p>
+        <p class="message">(Authorization: Bearer JWT)</p>
+    </div>
+
+    <div class="route">
+        <span class="method">GET</span>
+        <span class="endpoint">/v1/api/users/:id</span>
+        <p class="description">Fetches a user by ID (Need authorization header with JWT)</p>
+        <p class="message">(Authorization: Bearer JWT)</p>
+    </div>
+
+    <div class="route">
+        <span class="method">DELETE</span>
+        <span class="endpoint">/v1/api/users/:id</span>
+        <p class="description">Deletes a user by ID (Need authorization header with JWT)</p>
+        <p class="message">(Authorization: Bearer JWT)</p>
+    </div>
+
+    <div class="route">
+        <span class="method">POST</span>
+        <span class="endpoint">/v1/api/auth/login</span>
+        <p class="description">Logs in a user and returns a JWT</p>
+    </div>
+
+    <div class="route">
+        <span class="method">POST</span>
+        <span class="endpoint">/v1/api/auth/register</span>
+        <p class="description">Registers a new user</p>
+    </div>
+</body>
+</html>

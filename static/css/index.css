@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(209, 209, 209);
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.route {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.method {
+    font-weight: bold;
+    font-size:20px;
+    color: black;
+    margin-right: 15px;
+}
+
+.endpoint {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 12px;
+    font-size: 18px;
+    color: #000000;
+    margin-right: 15px;
+}
+.message {
+    margin-left:10px;
+    color: #ff0000;
+    font-size: 22px;
+}
+.description {
+    color: #000000;
+    font-size: 18px;
+}
