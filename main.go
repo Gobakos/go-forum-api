@@ -5,7 +5,7 @@ import (
     "github.com/beego/beego/v2/client/orm"
     "github.com/joho/godotenv"
     _ "github.com/go-sql-driver/mysql"
-    _ "test/routers"
+    _ "api/routers"
     beego "github.com/beego/beego/v2/server/web"
 )
 

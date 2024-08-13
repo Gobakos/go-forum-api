@@ -4,6 +4,7 @@ import (
 	// "crypto/hmac"
 	// "crypto/sha256"
 	// "encoding/hex"
+	"errors"
 	//"fmt"
 	"github.com/beego/beego/v2/client/orm"
 	//"strconv"
@@ -23,8 +24,8 @@ type Users struct {
 	Username string `orm:"size(50);unique"`
 	Password string `orm:"size(100)"`
 	Description string `orm:"size(150)"`
-	Is_Admin string `orm:"size(25);omitempty`
-	// Posts    []*Post `orm:"reverse(many)"`
+	Is_Admin string `orm:"size(25);omitempty"`
+	// Posts    []*Posts `orm:"reverse(many)"`
 }
 
 
@@ -42,14 +43,16 @@ func GetUsers()([]*Users,error){
 
 /*             GET USER              */
 
-func GetUser(id string)(Users,error){
-	o:=orm.NewOrm()
+func GetUser(id string) (Users, error) {
+	o := orm.NewOrm()
 	var user Users
-	_,err := o.QueryTable("users").Filter("Id",id).All(&user)
-	if err !=nil{
-		return user,err
+	err := o.QueryTable("users").Filter("Id", id).One(&user)
+	if err == orm.ErrNoRows {
+		return user, errors.New("user not found")
+	} else if err != nil {
+		return user, err
 	}
-	return user,err
+	return user, nil
 }
 
 

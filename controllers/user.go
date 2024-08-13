@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"test/services"
+	"api/services"
 	//"test/models"
 	//"strings"
 	//"encoding/json"
@@ -77,6 +77,7 @@ func (u *UserController) Delete() {
 /*			GET INFO ABOUT A USER			*/
 
 func (u *UserController) GetUser() {
+	
 	id := u.Ctx.Input.Param(":id")
 	if id==""{
 		u.Data["json"] = map[string]string{"error": "Invalid_Request"}

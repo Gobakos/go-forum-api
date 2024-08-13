@@ -8,7 +8,7 @@ import (
 	"errors"
 	"os"
 	"github.com/golang-jwt/jwt/v5"
-	"test/models"
+	"api/models"
 )
 
 func IsValidLogin(requestBody []byte,) (*models.Login, error) {
